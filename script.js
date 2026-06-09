@@ -20,13 +20,18 @@ function initPageLoader() {
   document.body.appendChild(loader);
   document.body.style.overflow = "hidden";
 
+  function hideLoader() {
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden";
+    document.body.style.overflow = "";
+    setTimeout(() => loader.remove(), 600);
+  }
+
+  const maxWait = setTimeout(hideLoader, 2500);
+
   window.addEventListener("load", () => {
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      loader.style.visibility = "hidden";
-      document.body.style.overflow = "";
-      setTimeout(() => loader.remove(), 600);
-    }, 1600);
+    clearTimeout(maxWait);
+    setTimeout(hideLoader, 400);
   });
 }
 
