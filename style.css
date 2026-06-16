@@ -525,7 +525,7 @@ img {
 }
 
 .portfolio-overlay h4 {
-    color: var(--white);
+    color:#ffffff !important;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
