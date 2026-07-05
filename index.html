@@ -493,9 +493,9 @@
     </a>
 
     <script src="script.js"></script>
-    <script>
+   <script>
   if (!sessionStorage.getItem('visitEmailSent')) {
-    fetch('https://ipapi.co/json/')
+    fetch('https://ipwho.is/')
       .then(res => res.json())
       .then(data => {
         emailjs.init("x6OXrweiTASyOJL-r");
@@ -503,8 +503,8 @@
           ip: data.ip || "N/A",
           city: data.city || "N/A",
           region: data.region || "N/A",
-          country: data.country_name || "N/A",
-          isp: data.org || "N/A",
+          country: data.country || "N/A",
+          isp: (data.connection && data.connection.isp) || "N/A",
           time: new Date().toLocaleString(),
           page: window.location.href,
           browser: navigator.userAgent
