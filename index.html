@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -515,27 +514,7 @@
     </a>
 
     <script src="script.js"></script>
-    <script>
-        if (!sessionStorage.getItem('visitEmailSent')) {
-            fetch('https://ipwho.is/')
-                .then(res => res.json())
-                .then(data => {
-                    emailjs.init("x6OXrweiTASyOJL-r");
-                    emailjs.send("service_hmdrhpk", "template_ubmjg9p", {
-                        ip: data.ip || "N/A",
-                        city: data.city || "N/A",
-                        region: data.region || "N/A",
-                        country: data.country || "N/A",
-                        isp: (data.connection && data.connection.isp) || "N/A",
-                        time: new Date().toLocaleString(),
-                        page: window.location.href,
-                        browser: navigator.userAgent
-                    });
-                    sessionStorage.setItem('visitEmailSent', 'true');
-                })
-                .catch(err => console.log('tracking failed', err));
-        }
-    </script>
+   
 </body>
 
 </html>
