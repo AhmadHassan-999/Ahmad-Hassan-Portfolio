@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -94,10 +94,14 @@
                 </div>
                 <div class="about-text">
                     <h3>GoHighLevel Expert & Frontend Developer </h3>
-                    <p>I am Ahmad Hassan, a passionate Frontend Developer and GoHighLevel Specialist. I build responsive
-                        websites using HTML, CSS, and Bootstrap that look great on all devices.</p>
-                    <p>I also create high-converting funnels, landing pages, and automation workflows on GoHighLevel
-                        to help businesses grow and generate more leads.</p>
+                    <p>I am Ahmad Hassan, a GoHighLevel Expert and Frontend
+                        Developer specializing in CRM automation, sales funnels,
+                        and workflow automation. I help businesses capture more
+                        leads and convert them on autopilot.</p>
+                    <p>I build high-converting funnels, landing pages, and
+                        complete GHL automation systems that save time and grow
+                        revenue automatically. I also craft clean responsive
+                        pages using HTML, CSS, and JavaScript.</p>
                     <div class="skills">
                         <div class="skill-item">
                             <span>GoHighLevel (GHL)</span>
@@ -136,8 +140,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="Asset/Ahmad Hassan Resume Cv.pdf"
-                        class="btn btn-primary" download>
+                    <a href="Asset/Ahmad Hassan Resume Cv.pdf" class="btn btn-primary" download>
                         Download CV <i class="fas fa-download"></i>
                     </a>
                 </div>
@@ -231,7 +234,26 @@
                                 class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
-
+                <div class="portfolio-item" data-category="GHL web">
+                    <img src="https://res.cloudinary.com/dae2jjqiv/image/upload/v1783315492/ChatGPT_Image_Jul_6_2026_10_22_31_AM_fxgczm.png"
+                        alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h4>Law Firm Funnel Built on GHL</h4>
+                        <p>A law firm helps generating more leads.</p>
+                        <a href="https://sites.leadconnectorhq.com/preview/YCmYqnkxXRAFgCInsLzq" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="GHL web">
+                    <img src="https://res.cloudinary.com/dae2jjqiv/image/upload/v1783316063/ChatGPT_Image_Jul_6_2026_10_34_07_AM_pmljh7.png"
+                        alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h4>Dezvu Funnel Built on GHL</h4>
+                        <p>A Dezvu Digital Marketing agency.</p>
+                        <a href="https://sites.leadconnectorhq.com/preview/Ab0yXbsEsmRzLoQxSwll" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
                 <div class="portfolio-item" data-category="GHL Auto">
                     <img src="https://res.cloudinary.com/dae2jjqiv/image/upload/v1781583573/core_automation_pqrf3u.png"
                         alt="Project 6">
@@ -493,27 +515,27 @@
     </a>
 
     <script src="script.js"></script>
-   <script>
-  if (!sessionStorage.getItem('visitEmailSent')) {
-    fetch('https://ipwho.is/')
-      .then(res => res.json())
-      .then(data => {
-        emailjs.init("x6OXrweiTASyOJL-r");
-        emailjs.send("service_hmdrhpk", "template_ubmjg9p", {
-          ip: data.ip || "N/A",
-          city: data.city || "N/A",
-          region: data.region || "N/A",
-          country: data.country || "N/A",
-          isp: (data.connection && data.connection.isp) || "N/A",
-          time: new Date().toLocaleString(),
-          page: window.location.href,
-          browser: navigator.userAgent
-        });
-        sessionStorage.setItem('visitEmailSent', 'true');
-      })
-      .catch(err => console.log('tracking failed', err));
-  }
-</script>
+    <script>
+        if (!sessionStorage.getItem('visitEmailSent')) {
+            fetch('https://ipwho.is/')
+                .then(res => res.json())
+                .then(data => {
+                    emailjs.init("x6OXrweiTASyOJL-r");
+                    emailjs.send("service_hmdrhpk", "template_ubmjg9p", {
+                        ip: data.ip || "N/A",
+                        city: data.city || "N/A",
+                        region: data.region || "N/A",
+                        country: data.country || "N/A",
+                        isp: (data.connection && data.connection.isp) || "N/A",
+                        time: new Date().toLocaleString(),
+                        page: window.location.href,
+                        browser: navigator.userAgent
+                    });
+                    sessionStorage.setItem('visitEmailSent', 'true');
+                })
+                .catch(err => console.log('tracking failed', err));
+        }
+    </script>
 </body>
 
 </html>
