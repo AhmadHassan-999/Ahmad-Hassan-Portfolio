@@ -219,7 +219,7 @@ function initScrollAnimations() {
 
   [
     [".section-header", "fade-in-up"], [".service-card", "fade-in-up"],
-    [".portfolio-item", "fade-in-up"], [".testimonial-card", "fade-in-up"],
+   [".portfolio-item", "fade-in-up"], [".why-card", "fade-in-up"], [".process-step", "fade-in-up"],
     [".about-image", "fade-in-left"], [".about-text", "fade-in-right"],
     [".contact-info", "fade-in-left"], [".contact-form", "fade-in-right"],
     [".stat", "fade-in-up"],
@@ -378,7 +378,19 @@ function initBackToTop() {
   btn.addEventListener("mouseenter", () => btn.style.transform = "translateY(-4px) scale(1.1)");
   btn.addEventListener("mouseleave", () => btn.style.transform = "translateY(0) scale(1)");
 }
-
+function initProcessLine() {
+  const fill = document.querySelector(".process-line-fill");
+  if (!fill) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        fill.style.width = "100%";
+        obs.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.4 });
+  obs.observe(fill);
+}
 /* ============================================
    CONTACT FORM — NETLIFY FUNCTION
    ============================================ */
@@ -441,6 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSkillBars();
   initPortfolioFilter();
   initBackToTop();
+  initProcessLine();
   initContactForm();
   console.log("%c🚀 Portfolio Loaded — Ahmad Hassan", "color:#4f46e5;font-size:16px;font-weight:bold;");
 });
