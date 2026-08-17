@@ -219,7 +219,7 @@ function initScrollAnimations() {
 
   [
     [".section-header", "fade-in-up"], [".service-card", "fade-in-up"],
-   [".portfolio-item", "fade-in-up"], [".why-card", "fade-in-up"], [".process-step", "fade-in-up"],
+    [".portfolio-item", "fade-in-up"], [".why-card", "fade-in-up"], [".process-step", "fade-in-up"],
     [".about-image", "fade-in-left"], [".about-text", "fade-in-right"],
     [".contact-info", "fade-in-left"], [".contact-form", "fade-in-right"],
     [".stat", "fade-in-up"],
@@ -230,7 +230,8 @@ function initScrollAnimations() {
     });
   });
 
-  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }), { threshold: 0.12 });
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+   { threshold: 0.12 });
   document.querySelectorAll(".fade-in-up,.fade-in-left,.fade-in-right").forEach(el => obs.observe(el));
 }
 
